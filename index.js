@@ -119,7 +119,7 @@ class ProductManager {
 
   async saveProducts() {
     try {
-      await fs.writeFile(this.path, JSON.stringify(this.products));
+      await fs.writeFile(this.path, JSON.stringify(this.products, null, 2));
     } catch (err) {
       console.error("Error al guardar los productos:", err);
     }
